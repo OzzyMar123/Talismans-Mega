@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.tasks.passive;
 
+import com.gitea.ozzymar.talismansmega.config.talismans.items.HealthConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import com.gitea.ozzymar.talismansmega.items.models.HEALTH_TALISMAN;
-import com.gitea.ozzymar.talismansmega.config.talismans.items.HealthConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;

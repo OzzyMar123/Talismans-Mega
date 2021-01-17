@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.tasks.interactive;
 
+import com.gitea.ozzymar.talismansmega.config.talismans.items.WorkbenchConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import com.gitea.ozzymar.talismansmega.items.models.WORKBENCH_TALISMAN;
-import com.gitea.ozzymar.talismansmega.config.talismans.items.WorkbenchConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;

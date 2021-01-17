@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.tasks.passive;
 
+import com.gitea.ozzymar.talismansmega.config.talismans.items.IronskinConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import com.gitea.ozzymar.talismansmega.items.models.IRONSKIN_TALISMAN;
-import com.gitea.ozzymar.talismansmega.config.talismans.items.IronskinConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;

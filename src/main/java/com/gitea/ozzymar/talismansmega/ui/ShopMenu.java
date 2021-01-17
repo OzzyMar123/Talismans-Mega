@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.ui;
 
 import com.cryptomorin.xseries.XMaterial;
-import com.gitea.ozzymar.talismansmega.items.models.*;
 import com.gitea.ozzymar.talismansmega.config.MenusConfiguration;
+import com.gitea.ozzymar.talismansmega.items.models.*;
 import com.gitea.ozzymar.talismansmega.utils.eco.PlayerEconomyManager;
 import com.gitea.ozzymar.talismansmega.utils.string.StringUtil;
 import de.tr7zw.nbtapi.NBTItem;

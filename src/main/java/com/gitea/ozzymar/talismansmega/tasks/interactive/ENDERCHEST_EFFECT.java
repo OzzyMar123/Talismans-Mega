@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.tasks.interactive;
 
+import com.gitea.ozzymar.talismansmega.config.talismans.items.EnderConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import com.gitea.ozzymar.talismansmega.items.models.ENDER_TALISMAN;
-import com.gitea.ozzymar.talismansmega.config.talismans.items.EnderConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;

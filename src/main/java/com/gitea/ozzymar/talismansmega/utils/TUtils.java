@@ -1,10 +1,10 @@
 package com.gitea.ozzymar.talismansmega.utils;
 
-import com.gitea.ozzymar.talismansmega.items.NBT_KEYS;
-import com.gitea.ozzymar.talismansmega.items.models.*;
 import com.gitea.ozzymar.talismansmega.config.LangConfiguration;
 import com.gitea.ozzymar.talismansmega.config.MenusConfiguration;
 import com.gitea.ozzymar.talismansmega.config.talismans.items.*;
+import com.gitea.ozzymar.talismansmega.items.NBT_KEYS;
+import com.gitea.ozzymar.talismansmega.items.models.*;
 import com.gitea.ozzymar.talismansmega.utils.string.StringUtil;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;

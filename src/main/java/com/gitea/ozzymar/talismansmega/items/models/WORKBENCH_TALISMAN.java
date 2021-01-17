@@ -1,8 +1,8 @@
 package com.gitea.ozzymar.talismansmega.items.models;
 
+import com.gitea.ozzymar.talismansmega.config.talismans.items.WorkbenchConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import com.gitea.ozzymar.talismansmega.items.NBT_KEYS;
-import com.gitea.ozzymar.talismansmega.config.talismans.items.WorkbenchConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 

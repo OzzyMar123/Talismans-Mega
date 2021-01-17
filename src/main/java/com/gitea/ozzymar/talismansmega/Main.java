@@ -1,16 +1,16 @@
 package com.gitea.ozzymar.talismansmega;
 
 import com.gitea.ozzymar.talismansmega.commands.Command;
-import com.gitea.ozzymar.talismansmega.tasks.interactive.ENDERCHEST_EFFECT;
-import com.gitea.ozzymar.talismansmega.tasks.interactive.WORKBENCH_EFFECT;
-import com.gitea.ozzymar.talismansmega.tasks.passive.*;
-import com.gitea.ozzymar.talismansmega.listeners.JoinListener;
-import com.gitea.ozzymar.talismansmega.listeners.PlaceTalismanListener;
-import com.gitea.ozzymar.talismansmega.listeners.WearHelmetListener;
-import com.gitea.ozzymar.talismansmega.ui.ShopMenu;
 import com.gitea.ozzymar.talismansmega.config.LangConfiguration;
 import com.gitea.ozzymar.talismansmega.config.MenusConfiguration;
 import com.gitea.ozzymar.talismansmega.config.talismans.items.*;
+import com.gitea.ozzymar.talismansmega.listeners.JoinListener;
+import com.gitea.ozzymar.talismansmega.listeners.PlaceTalismanListener;
+import com.gitea.ozzymar.talismansmega.listeners.WearHelmetListener;
+import com.gitea.ozzymar.talismansmega.tasks.interactive.ENDERCHEST_EFFECT;
+import com.gitea.ozzymar.talismansmega.tasks.interactive.WORKBENCH_EFFECT;
+import com.gitea.ozzymar.talismansmega.tasks.passive.*;
+import com.gitea.ozzymar.talismansmega.ui.ShopMenu;
 import com.gitea.ozzymar.talismansmega.utils.eco.ServerEconomyManager;
 import com.gitea.ozzymar.talismansmega.utils.string.StringUtil;
 import de.tr7zw.nbtapi.utils.MinecraftVersion;
@@ -30,7 +30,6 @@ public class Main extends JavaPlugin {
         MinecraftVersion.disableBStats();
         MinecraftVersion.disablePackageWarning();
         MinecraftVersion.disableUpdateCheck();
-
 
         new LangConfiguration(this, "lang.yml");
         new MenusConfiguration(this, "menus.yml");
