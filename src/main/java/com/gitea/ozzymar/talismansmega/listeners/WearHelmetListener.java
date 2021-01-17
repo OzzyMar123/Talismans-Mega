@@ -1,4 +1,4 @@
-package com.gitea.ozzymar.talismansmega.events;
+package com.gitea.ozzymar.talismansmega.listeners;
 
 import com.gitea.ozzymar.talismansmega.items.NBT_KEYS;
 import de.tr7zw.nbtapi.NBTItem;

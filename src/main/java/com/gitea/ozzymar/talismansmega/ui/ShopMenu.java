@@ -1,4 +1,4 @@
-package com.gitea.ozzymar.talismansmega.menusystem;
+package com.gitea.ozzymar.talismansmega.ui;
 
 import com.cryptomorin.xseries.XMaterial;
 import com.gitea.ozzymar.talismansmega.items.models.*;

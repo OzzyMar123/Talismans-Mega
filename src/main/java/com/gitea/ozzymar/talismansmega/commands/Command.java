@@ -1,7 +1,7 @@
 package com.gitea.ozzymar.talismansmega.commands;
 
 import com.gitea.ozzymar.talismansmega.items.models.*;
-import com.gitea.ozzymar.talismansmega.menusystem.ShopMenu;
+import com.gitea.ozzymar.talismansmega.ui.ShopMenu;
 import com.gitea.ozzymar.talismansmega.config.LangConfiguration;
 import com.gitea.ozzymar.talismansmega.utils.TUtils;
 import com.gitea.ozzymar.talismansmega.utils.string.StringUtil;
