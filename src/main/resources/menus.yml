@@ -1,0 +1,5 @@
+shop-menu:
+  title: 'Talisman Shop:'
+  price-lore-of-talismans:
+    - '&a&lPrice: '
+    - '&e&l$!price!'

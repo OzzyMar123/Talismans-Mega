@@ -1,0 +1,13 @@
+messages:
+  cmd-usage:
+    - '&d&l------------------------------'
+    - '&b/talismans give [player] [talisman]'
+    - '&b/talismans shop [player]'
+    - '&b/talismans reload'
+    - '&d&l------------------------------'
+  no-permission: '&7&l[&c!&7&l]&4 You do not seem to have the correct permission to execute this command!'
+  command-not-found: '&7&l[&c!&7&l]&4 Command not found!'
+  more-args-needed: '&7&l[&c!&7&l]&4 More arguments are needed to run this command!'
+  less-args-needed: '&7&l[&c!&7&l]&4 Less arguments are needed to run this command!'
+  player-invalid: '&7&l[&c!&7&l]&4 This player does not exist or is not online!'
+  reloaded: '&7&l[&c!&7&l]&a Reload complete!'

@@ -1,0 +1,7 @@
+item:
+  name: '&4&lWARRIOR TALISMAN'
+enabled-worlds:
+  - 'world'
+  - 'world_nether'
+  - 'world_the_end'
+price: 12500 # Only use up to 2 decimal places please to save errors.
