@@ -1,4 +1,4 @@
-package com.gitea.ozzymar.talismansmega.tasks.passive;
+package com.gitea.ozzymar.talismansmega.tasks.ambient;
 
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
 import de.tr7zw.nbtapi.NBTItem;

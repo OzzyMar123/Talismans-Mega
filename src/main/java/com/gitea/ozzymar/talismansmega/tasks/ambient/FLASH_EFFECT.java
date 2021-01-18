@@ -1,4 +1,4 @@
-package com.gitea.ozzymar.talismansmega.tasks.passive;
+package com.gitea.ozzymar.talismansmega.tasks.ambient;
 
 import com.gitea.ozzymar.talismansmega.config.talismans.items.FlashConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;

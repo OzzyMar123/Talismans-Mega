@@ -1,28 +1,28 @@
-package com.gitea.ozzymar.talismansmega.tasks.passive;
+package com.gitea.ozzymar.talismansmega.tasks.ambient;
 
-import com.gitea.ozzymar.talismansmega.config.talismans.items.HealthConfiguration;
+import com.gitea.ozzymar.talismansmega.config.talismans.items.WarriorConfiguration;
 import com.gitea.ozzymar.talismansmega.items.AbstractTalisman;
-import com.gitea.ozzymar.talismansmega.items.models.HEALTH_TALISMAN;
+import com.gitea.ozzymar.talismansmega.items.models.WARRIOR_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class HEALTH_EFFECT extends AbstractPassiveEffect {
+public class WARRIOR_EFFECT extends AbstractPassiveEffect {
 
-    public HEALTH_EFFECT(Plugin plugin) {
+    public WARRIOR_EFFECT(Plugin plugin) {
         super(plugin);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new HEALTH_TALISMAN();
+        return new WARRIOR_TALISMAN();
     }
 
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(PotionEffectType.REGENERATION, 35, 2)
+            makePotion(PotionEffectType.INCREASE_DAMAGE, 35, 2)
         };
     }
 
@@ -33,6 +33,6 @@ public class HEALTH_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return HealthConfiguration.getYaml();
+        return WarriorConfiguration.getYaml();
     }
 }
