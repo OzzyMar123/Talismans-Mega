@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.gitea.ozzymar</groupId>
+  <groupId>com.github.ozzymar</groupId>
   <artifactId>TalismansMega</artifactId>
   <version>1.2</version>
   <packaging>jar</packaging>
@@ -39,25 +39,25 @@
             <relocation>
               <pattern>com.cryptomorin.xseries</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.gitea.ozzymar.talismansmega.utils.xseries
+              <shadedPattern>com.github.ozzymar.talismansmega.utils.xseries
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.nbtapi</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.gitea.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.annotations</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.gitea.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.nbtinjector</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.gitea.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
               </shadedPattern>
             </relocation>
           </relocations>
@@ -104,7 +104,7 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.12.2-R0.1-SNAPSHOT</version>
+      <version>1.16.5-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

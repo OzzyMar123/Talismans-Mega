@@ -1,6 +1,6 @@
 name: TalismansMega
 version: ${project.version}
-main: com.gitea.ozzymar.talismansmega.Main
+main: com.github.ozzymar.talismansmega.Main
 api-version: 1.13
 authors: [ OzzyMar ]
 description: TALISMANS ON A WHOLE NEW LEVEL!
