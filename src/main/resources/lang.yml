@@ -10,4 +10,4 @@ messages:
   more-args-needed: '&7&l[&c!&7&l]&4 More arguments are needed to run this command!'
   less-args-needed: '&7&l[&c!&7&l]&4 Less arguments are needed to run this command!'
   player-invalid: '&7&l[&c!&7&l]&4 This player does not exist or is not online!'
-  reloaded: '&7&l[&c!&7&l]&a Reload complete!'
+  reload: '&7&l[&c!&7&l]&a Reload complete!'

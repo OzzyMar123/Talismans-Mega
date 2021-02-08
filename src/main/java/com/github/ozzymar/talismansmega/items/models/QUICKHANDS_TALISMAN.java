@@ -1,12 +1,15 @@
 package com.github.ozzymar.talismansmega.items.models;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.QuickhandsConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.NBT_KEYS;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 
 public class QUICKHANDS_TALISMAN extends AbstractTalisman {
+    public QUICKHANDS_TALISMAN(TalismansMega talismansMega) {
+        super(talismansMega);
+    }
+
     @Override
     public ItemStack getItem() {
         return item();
@@ -14,7 +17,7 @@ public class QUICKHANDS_TALISMAN extends AbstractTalisman {
 
     @Override
     public YamlConfiguration config() {
-        return QuickhandsConfiguration.getYaml();
+        return talismansMega.getConfigs().getQuickhandsTalismanConfig().getYaml();
     }
 
     @Override
@@ -24,11 +27,6 @@ public class QUICKHANDS_TALISMAN extends AbstractTalisman {
 
     @Override
     public String talismanType() {
-        return NBT_KEYS.IS_QUICKHANDS_TALISMAN;
-    }
-
-    @Override
-    public double price() {
-        return QuickhandsConfiguration.getYaml().getLong("price");
+        return talismansMega.getUtilities().getNBTKeys().IS_QUICKHANDS_TALISMAN;
     }
 }

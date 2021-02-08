@@ -1,22 +1,20 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.MoltenskinConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.models.MOLTENSKIN_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class MOLTENSKIN_EFFECT extends AbstractPassiveEffect {
 
-    public MOLTENSKIN_EFFECT(Plugin plugin) {
-        super(plugin);
+    public MOLTENSKIN_EFFECT(TalismansMega talismansMega) {
+        super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new MOLTENSKIN_TALISMAN();
+        return talismansMega.getTalismans().getMoltenskinTalisman();
     }
 
     @Override
@@ -33,6 +31,6 @@ public class MOLTENSKIN_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return MoltenskinConfiguration.getYaml();
+        return talismansMega.getConfigs().getMoltenskinTalismanConfig().getYaml();
     }
 }

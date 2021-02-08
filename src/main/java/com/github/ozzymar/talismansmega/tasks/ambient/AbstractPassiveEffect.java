@@ -1,11 +1,11 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -14,8 +14,11 @@ import java.util.Arrays;
 
 public abstract class AbstractPassiveEffect extends BukkitRunnable {
 
-    public AbstractPassiveEffect(Plugin plugin) {
-        this.runTaskTimer(plugin, 0, everyTickToCheck());
+    protected TalismansMega talismansMega;
+
+    public AbstractPassiveEffect(TalismansMega talismansMega) {
+        this.talismansMega = talismansMega;
+        this.runTaskTimer(talismansMega, 0, everyTickToCheck());
     }
 
     public abstract AbstractTalisman talismanNeeded();

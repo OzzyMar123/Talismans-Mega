@@ -4,15 +4,15 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 public class UUIDUtils {
-    private static final String POSSIBLE_CHARS =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/*-+.=+_()[]{}&^%$£!|<>,?";
-    private static final Random rng = new SecureRandom();
 
-    private static char randomChar() {
+    private final Random rng = new SecureRandom();
+
+    private char randomChar() {
+        String POSSIBLE_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/*-+.=+_()[]{}&^%$£!|<>,?";
         return POSSIBLE_CHARS.charAt(rng.nextInt(POSSIBLE_CHARS.length()));
     }
 
-    public static String randomUUID(int length) {
+    public String randomUUID(int length) {
         StringBuilder sb = new StringBuilder();
         int spacer = 0;
         while (length > 0) {

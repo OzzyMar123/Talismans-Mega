@@ -1,22 +1,21 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.HealthConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.models.HEALTH_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class HEALTH_EFFECT extends AbstractPassiveEffect {
 
-    public HEALTH_EFFECT(Plugin plugin) {
-        super(plugin);
+
+    public HEALTH_EFFECT(TalismansMega talismansMega) {
+        super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new HEALTH_TALISMAN();
+        return talismansMega.getTalismans().getHealthTalisman();
     }
 
     @Override
@@ -33,6 +32,6 @@ public class HEALTH_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return HealthConfiguration.getYaml();
+        return talismansMega.getConfigs().getHealthTalismanConfig().getYaml();
     }
 }

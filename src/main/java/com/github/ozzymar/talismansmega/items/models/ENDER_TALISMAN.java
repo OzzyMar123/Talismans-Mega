@@ -1,12 +1,15 @@
 package com.github.ozzymar.talismansmega.items.models;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.EnderConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.NBT_KEYS;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 
 public class ENDER_TALISMAN extends AbstractTalisman {
+    public ENDER_TALISMAN(TalismansMega talismansMega) {
+        super(talismansMega);
+    }
+
     @Override
     public ItemStack getItem() {
         return item();
@@ -14,7 +17,7 @@ public class ENDER_TALISMAN extends AbstractTalisman {
 
     @Override
     public YamlConfiguration config() {
-        return EnderConfiguration.getYaml();
+        return talismansMega.getConfigs().getEnderchestTalismanConfig().getYaml();
     }
 
     @Override
@@ -24,11 +27,6 @@ public class ENDER_TALISMAN extends AbstractTalisman {
 
     @Override
     public String talismanType() {
-        return NBT_KEYS.IS_ENDER_TALISMAN;
-    }
-
-    @Override
-    public double price() {
-        return EnderConfiguration.getYaml().getLong("price");
+        return talismansMega.getUtilities().getNBTKeys().IS_ENDER_TALISMAN;
     }
 }

@@ -5,9 +5,10 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
 public class ServerEconomyManager {
-    private static Economy econ = null;
 
-    public static boolean setupEconomy(Plugin plugin) {
+    private Economy econ = null;
+
+    public boolean setupEconomy(Plugin plugin) {
         if (plugin.getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
@@ -16,10 +17,10 @@ public class ServerEconomyManager {
             return false;
         }
         econ = rsp.getProvider();
-        return econ != null;
+        return true;
     }
 
-    public static Economy getEconomy() {
+    public Economy getEconomy() {
         return econ;
     }
 }

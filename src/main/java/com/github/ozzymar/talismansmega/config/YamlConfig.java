@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.config.talismans.items;
+package com.github.ozzymar.talismansmega.config;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -7,14 +7,14 @@ import org.bukkit.plugin.Plugin;
 import java.io.File;
 import java.io.IOException;
 
-public class QuickhandsConfiguration {
+public class YamlConfig {
     // The .yml file itself
-    private static File file;
+    private final File file;
 
-    // The configuration field for 'reading' the file
-    private static YamlConfiguration yaml;
+    // The config field for 'reading' the file
+    private YamlConfiguration yaml;
 
-    public QuickhandsConfiguration(Plugin plugin, String fileLocation) {
+    public YamlConfig(Plugin plugin, String fileLocation) {
 
         // The data folder directory
         File dir = plugin.getDataFolder();
@@ -33,10 +33,10 @@ public class QuickhandsConfiguration {
             plugin.saveResource(fileLocation, false);
         }
 
-        // Making a new configuration
+        // Making a new config
         yaml = new YamlConfiguration();
 
-        // Loading the file's data into the configuration field
+        // Loading the file's data into the config field
         try {
             yaml.load(file);
         } catch (IOException | InvalidConfigurationException e) {
@@ -44,8 +44,8 @@ public class QuickhandsConfiguration {
         }
     }
 
-    // Saves the configuration data
-    public static void save() {
+    // Saves the config data
+    public void save() {
         try {
             yaml.save(file);
         } catch (IOException e) {
@@ -54,12 +54,12 @@ public class QuickhandsConfiguration {
     }
 
     // Reloads the data already there
-    public static void reload() {
+    public void reload() {
         yaml = YamlConfiguration.loadConfiguration(file);
     }
 
-    // Basic getter for retrieving the configuration data
-    public static YamlConfiguration getYaml() {
+    // Basic getter for retrieving the config data
+    public YamlConfiguration getYaml() {
         return yaml;
     }
 }

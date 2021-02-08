@@ -1,12 +1,15 @@
 package com.github.ozzymar.talismansmega.items.models;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.IronskinConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.NBT_KEYS;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 
 public class IRONSKIN_TALISMAN extends AbstractTalisman {
+    public IRONSKIN_TALISMAN(TalismansMega talismansMega) {
+        super(talismansMega);
+    }
+
     @Override
     public ItemStack getItem() {
         return item();
@@ -14,7 +17,7 @@ public class IRONSKIN_TALISMAN extends AbstractTalisman {
 
     @Override
     public YamlConfiguration config() {
-        return IronskinConfiguration.getYaml();
+        return talismansMega.getConfigs().getIronskinTalismanConfig().getYaml();
     }
 
     @Override
@@ -24,11 +27,6 @@ public class IRONSKIN_TALISMAN extends AbstractTalisman {
 
     @Override
     public String talismanType() {
-        return NBT_KEYS.IS_IRONSKIN_TALISMAN;
-    }
-
-    @Override
-    public double price() {
-        return IronskinConfiguration.getYaml().getLong("price");
+        return talismansMega.getUtilities().getNBTKeys().IS_IRONSKIN_TALISMAN;
     }
 }

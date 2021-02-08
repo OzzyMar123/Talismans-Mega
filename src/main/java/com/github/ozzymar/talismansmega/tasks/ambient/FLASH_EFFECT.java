@@ -1,22 +1,20 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.FlashConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.models.FLASH_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class FLASH_EFFECT extends AbstractPassiveEffect {
 
-    public FLASH_EFFECT(Plugin plugin) {
-        super(plugin);
+    public FLASH_EFFECT(TalismansMega talismansMega) {
+        super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new FLASH_TALISMAN();
+        return talismansMega.getTalismans().getFlashTalisman();
     }
 
     @Override
@@ -33,6 +31,6 @@ public class FLASH_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return FlashConfiguration.getYaml();
+        return talismansMega.getConfigs().getFlashTalismanConfig().getYaml();
     }
 }

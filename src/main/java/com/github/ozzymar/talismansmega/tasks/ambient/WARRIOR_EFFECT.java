@@ -1,22 +1,20 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.WarriorConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.models.WARRIOR_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class WARRIOR_EFFECT extends AbstractPassiveEffect {
 
-    public WARRIOR_EFFECT(Plugin plugin) {
-        super(plugin);
+    public WARRIOR_EFFECT(TalismansMega talismansMega) {
+        super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new WARRIOR_TALISMAN();
+        return talismansMega.getTalismans().getWarriorTalisman();
     }
 
     @Override
@@ -33,6 +31,6 @@ public class WARRIOR_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return WarriorConfiguration.getYaml();
+        return talismansMega.getConfigs().getWarriorTalismanConfig().getYaml();
     }
 }

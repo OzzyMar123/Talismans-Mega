@@ -1,22 +1,20 @@
 package com.github.ozzymar.talismansmega.tasks.ambient;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.QuickhandsConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.models.QUICKHANDS_TALISMAN;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class QUICKHANDS_EFFECT extends AbstractPassiveEffect {
 
-    public QUICKHANDS_EFFECT(Plugin plugin) {
-        super(plugin);
+    public QUICKHANDS_EFFECT(TalismansMega talismansMega) {
+        super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return new QUICKHANDS_TALISMAN();
+        return talismansMega.getTalismans().getQuickhandsTalisman();
     }
 
     @Override
@@ -33,6 +31,6 @@ public class QUICKHANDS_EFFECT extends AbstractPassiveEffect {
 
     @Override
     public YamlConfiguration config() {
-        return QuickhandsConfiguration.getYaml();
+        return talismansMega.getConfigs().getQuickhandsTalismanConfig().getYaml();
     }
 }

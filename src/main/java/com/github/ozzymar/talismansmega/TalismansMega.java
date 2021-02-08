@@ -1,81 +1,74 @@
 package com.github.ozzymar.talismansmega;
 
 import com.github.ozzymar.talismansmega.commands.Command;
-import com.github.ozzymar.talismansmega.config.LangConfiguration;
-import com.github.ozzymar.talismansmega.config.MenusConfiguration;
-import com.github.ozzymar.talismansmega.config.talismans.items.*;
 import com.github.ozzymar.talismansmega.listeners.JoinListener;
 import com.github.ozzymar.talismansmega.listeners.PlaceTalismanListener;
 import com.github.ozzymar.talismansmega.listeners.WearHelmetListener;
-import com.github.ozzymar.talismansmega.tasks.ambient.*;
-import com.github.ozzymar.talismansmega.tasks.interact.ENDERCHEST_EFFECT;
-import com.github.ozzymar.talismansmega.tasks.interact.WORKBENCH_EFFECT;
-import com.github.ozzymar.talismansmega.ui.ShopMenu;
-import com.github.ozzymar.talismansmega.utils.eco.ServerEconomyManager;
-import com.github.ozzymar.talismansmega.utils.string.StringUtil;
+import com.github.ozzymar.talismansmega.objects.*;
+import com.github.ozzymar.talismansmega.utils.string.ColorUtil;
 import de.tr7zw.nbtapi.utils.MinecraftVersion;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TalismansMega extends JavaPlugin {
 
-    private static Plugin plugin;
-
-    public static Plugin getPlugin() {
-        return plugin;
-    }
+    private final Configs configs = new Configs(this);
+    private final Talismans talismans = new Talismans(this);
+    private final Utilities utilities = new Utilities(this);
+    private final Menus menus = new Menus(this);
+    private final Effects effects = new Effects(this);
 
     @Override
     public void onLoad() {
         MinecraftVersion.disableBStats();
         MinecraftVersion.disablePackageWarning();
         MinecraftVersion.disableUpdateCheck();
-
-        new LangConfiguration(this, "lang.yml");
-        new MenusConfiguration(this, "menus.yml");
-        new FlashConfiguration(this, "items/talismans/flash.yml");
-        new HealthConfiguration(this, "items/talismans/health.yml");
-        new WarriorConfiguration(this, "items/talismans/warrior.yml");
-        new IronskinConfiguration(this, "items/talismans/ironskin.yml");
-        new MoltenskinConfiguration(this, "items/talismans/moltenskin.yml");
-        new QuickhandsConfiguration(this, "items/talismans/quickhands.yml");
-        new WorkbenchConfiguration(this, "items/talismans/workbench.yml");
-        new EnderConfiguration(this, "items/talismans/enderchest.yml");
     }
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-        plugin = this;
+        configs.load();
+        talismans.loadTalismans();
+        utilities.loadUtilities();
+        menus.loadMenus();
+        effects.loadEffects();
 
-        if (!ServerEconomyManager.setupEconomy(this)) {
-            System.out.println(StringUtil.format("[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!"));
+        if (!utilities.getServerEconomyManager().setupEconomy(this)) {
+            System.out.println(ColorUtil.format("[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!"));
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
-        this.getServer().getPluginCommand("talismans").setExecutor(new Command());
+        this.getServer().getPluginCommand("talismans").setExecutor(new Command(this));
 
-        this.getServer().getPluginManager().registerEvents(new PlaceTalismanListener(), this);
-        this.getServer().getPluginManager().registerEvents(new WearHelmetListener(), this);
-        this.getServer().getPluginManager().registerEvents(new JoinListener(), this);
-
-        new FLASH_EFFECT(this);
-        new HEALTH_EFFECT(this);
-        new WARRIOR_EFFECT(this);
-        new IRONSKIN_EFFECT(this);
-        new MOLTENSKIN_EFFECT(this);
-        new QUICKHANDS_EFFECT(this);
-
-        new WORKBENCH_EFFECT(this);
-        new ENDERCHEST_EFFECT(this);
-
-        new ShopMenu(this);
+        this.getServer().getPluginManager().registerEvents(new PlaceTalismanListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new JoinListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new WearHelmetListener(this), this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        plugin = null;
+        effects.unloadEffects();
+        menus.unloadMenus();
+        utilities.unloadUtilities();
+        talismans.unloadTalismans();
+        configs.unload();
+    }
+
+    public Configs getConfigs() {
+        return configs;
+    }
+
+    public Talismans getTalismans() {
+        return talismans;
+    }
+
+    public Utilities getUtilities() {
+        return utilities;
+    }
+
+    public Menus getMenus() {
+        return menus;
     }
 }

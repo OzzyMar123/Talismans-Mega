@@ -1,12 +1,15 @@
 package com.github.ozzymar.talismansmega.items.models;
 
-import com.github.ozzymar.talismansmega.config.talismans.items.HealthConfiguration;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.NBT_KEYS;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 
 public class HEALTH_TALISMAN extends AbstractTalisman {
+    public HEALTH_TALISMAN(TalismansMega talismansMega) {
+        super(talismansMega);
+    }
+
     @Override
     public ItemStack getItem() {
         return item();
@@ -14,7 +17,7 @@ public class HEALTH_TALISMAN extends AbstractTalisman {
 
     @Override
     public YamlConfiguration config() {
-        return HealthConfiguration.getYaml();
+        return talismansMega.getConfigs().getHealthTalismanConfig().getYaml();
     }
 
     @Override
@@ -24,11 +27,6 @@ public class HEALTH_TALISMAN extends AbstractTalisman {
 
     @Override
     public String talismanType() {
-        return NBT_KEYS.IS_HEALTH_TALISMAN;
-    }
-
-    @Override
-    public double price() {
-        return HealthConfiguration.getYaml().getLong("price");
+        return talismansMega.getUtilities().getNBTKeys().IS_HEALTH_TALISMAN;
     }
 }

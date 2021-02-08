@@ -1,6 +1,6 @@
 package com.github.ozzymar.talismansmega.listeners;
 
-import com.github.ozzymar.talismansmega.items.NBT_KEYS;
+import com.github.ozzymar.talismansmega.TalismansMega;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -12,6 +12,13 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 public class WearHelmetListener implements Listener {
+
+    private final TalismansMega talismansMega;
+
+    public WearHelmetListener(TalismansMega talismansMega) {
+        this.talismansMega = talismansMega;
+    }
+
     @EventHandler
     public void onLeftClicked(InventoryClickEvent event) {
         try {
@@ -19,7 +26,7 @@ public class WearHelmetListener implements Listener {
             if (event.getWhoClicked() instanceof Player) {
                 if (event.getWhoClicked().getGameMode() == GameMode.SURVIVAL) {
                     NBTItem nbti = new NBTItem(event.getCursor());
-                    if (nbti.hasKey(NBT_KEYS.IS_TALISMAN) && event.getSlotType() == InventoryType.SlotType.ARMOR && event.getClick().isLeftClick()) {
+                    if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN) && event.getSlotType() == InventoryType.SlotType.ARMOR && event.getClick().isLeftClick()) {
                         event.setCancelled(true);
                     }
                 }
@@ -35,7 +42,7 @@ public class WearHelmetListener implements Listener {
             if (event.getWhoClicked() instanceof Player) {
                 if (event.getWhoClicked().getGameMode() == GameMode.SURVIVAL) {
                     NBTItem nbti = new NBTItem(event.getCursor());
-                    if (nbti.hasKey(NBT_KEYS.IS_TALISMAN) && event.getSlotType() == InventoryType.SlotType.ARMOR && event.getClick().isRightClick()) {
+                    if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN) && event.getSlotType() == InventoryType.SlotType.ARMOR && event.getClick().isRightClick()) {
                         event.setCancelled(true);
                     }
                 }
@@ -51,7 +58,7 @@ public class WearHelmetListener implements Listener {
             NBTItem nbti = new NBTItem(event.getCurrentItem());
             if (event.getWhoClicked() instanceof Player) {
                 if (event.getWhoClicked().getGameMode() == GameMode.SURVIVAL) {
-                    if (nbti.hasKey(NBT_KEYS.IS_TALISMAN) && event.getClick().isShiftClick()) {
+                    if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN) && event.getClick().isShiftClick()) {
                         event.setCancelled(true);
                     }
                 }
@@ -65,7 +72,7 @@ public class WearHelmetListener implements Listener {
         try {
             ItemStack item = event.getItem();
             NBTItem nbti = new NBTItem(item);
-            if (nbti.hasKey(NBT_KEYS.IS_TALISMAN)) {
+            if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN)) {
                 event.setCancelled(true);
             }
         } catch (Exception ignored) {
