@@ -1,8 +1,8 @@
-package com.github.ozzymar.talismansmega.utils;
+package com.github.ozzymar.talismansmega.utils.talisman;
 
+import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.items.models.*;
-import com.github.ozzymar.talismansmega.utils.string.ColorUtil;
+import com.github.ozzymar.talismansmega.items.types.*;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -41,7 +41,7 @@ public class TUtils {
                         update(item);
                     }
                 });
-            player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.reloaded")));
+            player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.reloaded")));
         } catch (Exception ex) {
             talismansMega.getConfigs().load();
         }
@@ -91,6 +91,7 @@ public class TUtils {
 
     public boolean isTalisman(ItemStack item) {
         NBTItem nbti = new NBTItem(item);
+        if (nbti == null) return false;
         return nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN);
     }
 }

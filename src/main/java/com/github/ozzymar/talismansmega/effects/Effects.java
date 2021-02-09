@@ -1,9 +1,9 @@
-package com.github.ozzymar.talismansmega.objects;
+package com.github.ozzymar.talismansmega.effects;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.tasks.ambient.*;
-import com.github.ozzymar.talismansmega.tasks.interact.ENDERCHEST_EFFECT;
-import com.github.ozzymar.talismansmega.tasks.interact.WORKBENCH_EFFECT;
+import com.github.ozzymar.talismansmega.effects.ambient.*;
+import com.github.ozzymar.talismansmega.effects.interact.ENDERCHEST_EFFECT;
+import com.github.ozzymar.talismansmega.effects.interact.WORKBENCH_EFFECT;
 
 public class Effects {
 
@@ -16,11 +16,12 @@ public class Effects {
     private QUICKHANDS_EFFECT quickhands_effect;
     private WORKBENCH_EFFECT workbench_effect;
     private ENDERCHEST_EFFECT enderchest_effect;
+
     public Effects(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }
 
-    public void loadEffects() {
+    public void load() {
         this.flash_effect = new FLASH_EFFECT(talismansMega);
         this.health_effect = new HEALTH_EFFECT(talismansMega);
         this.warrior_effect = new WARRIOR_EFFECT(talismansMega);
@@ -31,7 +32,7 @@ public class Effects {
         this.enderchest_effect = new ENDERCHEST_EFFECT(talismansMega);
     }
 
-    public void unloadEffects() {
+    public void unload() {
         this.flash_effect = null;
         this.health_effect = null;
         this.warrior_effect = null;

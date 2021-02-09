@@ -1,8 +1,8 @@
-package com.github.ozzymar.talismansmega.ui;
+package com.github.ozzymar.talismansmega.ui.guis;
 
 import com.cryptomorin.xseries.XMaterial;
+import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.utils.string.ColorUtil;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -25,7 +25,7 @@ public class ShopMenu {
 
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(
-            null, 36, ColorUtil.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")));
+            null, 36, ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")));
 
         for (int emptySlot = 0; emptySlot < inv.getSize(); emptySlot++) {
             if (inv.getItem(emptySlot) == null) {
@@ -57,7 +57,7 @@ public class ShopMenu {
         public void onShopClick(InventoryClickEvent event) {
 
             if (!event.getView().getTitle().equalsIgnoreCase(
-                ChatColor.stripColor(ColorUtil.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")))))
+                ChatColor.stripColor(ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")))))
                 return;
 
             Player player = (Player) event.getWhoClicked();

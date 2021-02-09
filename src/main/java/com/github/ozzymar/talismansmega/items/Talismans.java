@@ -1,7 +1,7 @@
-package com.github.ozzymar.talismansmega.objects;
+package com.github.ozzymar.talismansmega.items;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.items.models.*;
+import com.github.ozzymar.talismansmega.items.types.*;
 
 public class Talismans {
 
@@ -14,11 +14,12 @@ public class Talismans {
     private QUICKHANDS_TALISMAN quickhandsTalisman;
     private WORKBENCH_TALISMAN workbenchTalisman;
     private ENDER_TALISMAN enderTalisman;
+
     public Talismans(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }
 
-    public void loadTalismans() {
+    public void load() {
         this.flashTalisman = new FLASH_TALISMAN(talismansMega);
         this.healthTalisman = new HEALTH_TALISMAN(talismansMega);
         this.warriorTalisman = new WARRIOR_TALISMAN(talismansMega);
@@ -29,7 +30,7 @@ public class Talismans {
         this.enderTalisman = new ENDER_TALISMAN(talismansMega);
     }
 
-    public void unloadTalismans() {
+    public void unload() {
         this.flashTalisman = null;
         this.healthTalisman = null;
         this.warriorTalisman = null;

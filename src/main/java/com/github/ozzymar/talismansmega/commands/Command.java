@@ -1,7 +1,7 @@
 package com.github.ozzymar.talismansmega.commands;
 
+import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.utils.string.ColorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -26,29 +26,30 @@ public class Command implements ICommand {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
         if (!player.hasPermission("talismans.base")) {
-            player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+            player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
             return true;
         }
         if (args.length == 0) {
-            talismansMega.getConfigs().getLangConfig().getYaml().getStringList("messages.cmd-usage").forEach((s) -> player.sendMessage(ColorUtil.format(s)));
+            talismansMega.getConfigs().getLangConfig().getYaml().getStringList("messages.cmd-usage")
+                .forEach((s) -> player.sendMessage(ColorFormatter.format(s)));
         }
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("give")) {
                 if (!player.hasPermission("talismans.base.give")) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                     return true;
                 }
                 if (args.length < 3) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
                     return true;
                 }
                 if (args.length > 3) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                     return true;
                 }
                 Player target = Bukkit.getPlayerExact(args[1]);
                 if (target == null) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
                     return true;
                 }
                 switch (args[2]) {
@@ -115,11 +116,11 @@ public class Command implements ICommand {
             }
             if (args[0].equalsIgnoreCase("shop")) {
                 if (!player.hasPermission("talismans.base.shop")) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                     return true;
                 }
                 if (args.length > 1) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                     return true;
                 }
                 player.openInventory(talismansMega.getMenus().getShopMenu().getInventory());
@@ -127,11 +128,11 @@ public class Command implements ICommand {
 
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!player.hasPermission("talismans.base.reload")) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                     return true;
                 }
                 if (args.length > 1) {
-                    player.sendMessage(ColorUtil.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                     return true;
                 }
                 talismansMega.getUtilities().getTUtils().reload(player);

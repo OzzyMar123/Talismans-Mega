@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.tasks.ambient;
+package com.github.ozzymar.talismansmega.effects.ambient;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;

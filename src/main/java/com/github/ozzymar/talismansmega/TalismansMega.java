@@ -1,11 +1,17 @@
 package com.github.ozzymar.talismansmega;
 
+import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
+import com.github.ozzymar.marsapi.api.enums.VersionChecker;
 import com.github.ozzymar.talismansmega.commands.Command;
+import com.github.ozzymar.talismansmega.config.Configs;
+import com.github.ozzymar.talismansmega.effects.Effects;
+import com.github.ozzymar.talismansmega.items.Talismans;
 import com.github.ozzymar.talismansmega.listeners.JoinListener;
+import com.github.ozzymar.talismansmega.listeners.OffPlaceTalismanListener;
 import com.github.ozzymar.talismansmega.listeners.PlaceTalismanListener;
 import com.github.ozzymar.talismansmega.listeners.WearHelmetListener;
-import com.github.ozzymar.talismansmega.objects.*;
-import com.github.ozzymar.talismansmega.utils.string.ColorUtil;
+import com.github.ozzymar.talismansmega.ui.Menus;
+import com.github.ozzymar.talismansmega.utils.Utilities;
 import de.tr7zw.nbtapi.utils.MinecraftVersion;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,31 +34,33 @@ public class TalismansMega extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         configs.load();
-        talismans.loadTalismans();
-        utilities.loadUtilities();
-        menus.loadMenus();
-        effects.loadEffects();
+        talismans.load();
+        utilities.load();
+        menus.load();
+        effects.load();
 
         if (!utilities.getServerEconomyManager().setupEconomy(this)) {
-            System.out.println(ColorUtil.format("[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!"));
+            System.out.println(ColorFormatter.format("[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!"));
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
         this.getServer().getPluginCommand("talismans").setExecutor(new Command(this));
 
-        this.getServer().getPluginManager().registerEvents(new PlaceTalismanListener(this), this);
         this.getServer().getPluginManager().registerEvents(new JoinListener(this), this);
         this.getServer().getPluginManager().registerEvents(new WearHelmetListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new PlaceTalismanListener(this), this);
+        if (VersionChecker.isVersionNewer(VersionChecker.MC1_8_R3))
+            this.getServer().getPluginManager().registerEvents(new OffPlaceTalismanListener(this), this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        effects.unloadEffects();
-        menus.unloadMenus();
-        utilities.unloadUtilities();
-        talismans.unloadTalismans();
+        effects.unload();
+        menus.unload();
+        utilities.unload();
+        talismans.unload();
         configs.unload();
     }
 

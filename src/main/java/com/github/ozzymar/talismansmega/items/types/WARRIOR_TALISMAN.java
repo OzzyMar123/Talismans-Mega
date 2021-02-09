@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.items.models;
+package com.github.ozzymar.talismansmega.items.types;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
@@ -22,7 +22,7 @@ public class WARRIOR_TALISMAN extends AbstractTalisman {
 
     @Override
     public String skullValue() {
-        return "26660b016d05645fffd1f48b792d1abe5d8f30dc96567569ae1d982d250b693c";
+        return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjY2NjBiMDE2ZDA1NjQ1ZmZmZDFmNDhiNzkyZDFhYmU1ZDhmMzBkYzk2NTY3NTY5YWUxZDk4MmQyNTBiNjkzYyJ9fX0=";
     }
 
     @Override

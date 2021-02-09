@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.items.models;
+package com.github.ozzymar.talismansmega.items.types;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
@@ -22,7 +22,7 @@ public class HEALTH_TALISMAN extends AbstractTalisman {
 
     @Override
     public String skullValue() {
-        return "2c1c179ad51955f1522c48ea9931f09c162741b45e22e9d3feb682c7e5ed8274";
+        return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmMxYzE3OWFkNTE5NTVmMTUyMmM0OGVhOTkzMWYwOWMxNjI3NDFiNDVlMjJlOWQzZmViNjgyYzdlNWVkODI3NCJ9fX0=";
     }
 
     @Override

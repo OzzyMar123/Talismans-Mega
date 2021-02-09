@@ -9,19 +9,19 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
-public class PlaceTalismanListener implements Listener {
+public class OffPlaceTalismanListener implements Listener {
 
     private final TalismansMega talismansMega;
 
-    public PlaceTalismanListener(TalismansMega talismansMega) {
+    public OffPlaceTalismanListener(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }
 
     @EventHandler
-    public void onBlockMainPlaceMain(BlockPlaceEvent event) {
+    public void onBlockOffPlaceMain(BlockPlaceEvent event) {
         Player player = event.getPlayer();
-        ItemStack hand = player.getInventory().getItemInHand();
-        if (!(event.getHand() == EquipmentSlot.HAND)) return;
+        ItemStack hand = player.getInventory().getItemInOffHand();
+        if (!(event.getHand() == EquipmentSlot.OFF_HAND)) return;
         if (talismansMega.getUtilities().getTUtils().isTalisman(hand)) event.setCancelled(true);
     }
 }

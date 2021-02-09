@@ -1,7 +1,6 @@
-package com.github.ozzymar.talismansmega.objects;
+package com.github.ozzymar.talismansmega.config;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.config.YamlConfig;
 
 public class Configs {
 
@@ -16,6 +15,7 @@ public class Configs {
     private YamlConfig quickhandsTalismanConfig;
     private YamlConfig workbenchTalismanConfig;
     private YamlConfig enderchestTalismanConfig;
+
     public Configs(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }

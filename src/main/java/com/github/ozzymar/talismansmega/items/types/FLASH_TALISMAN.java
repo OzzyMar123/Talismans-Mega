@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.items.models;
+package com.github.ozzymar.talismansmega.items.types;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
@@ -22,7 +22,7 @@ public class FLASH_TALISMAN extends AbstractTalisman {
 
     @Override
     public String skullValue() {
-        return "734fb3203233efbae82628bd4fca7348cd071e5b7b52407f1d1d2794e31799ff";
+        return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM0ZmIzMjAzMjMzZWZiYWU4MjYyOGJkNGZjYTczNDhjZDA3MWU1YjdiNTI0MDdmMWQxZDI3OTRlMzE3OTlmZiJ9fX0=";
     }
 
     @Override

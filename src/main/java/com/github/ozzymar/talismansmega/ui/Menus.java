@@ -1,7 +1,7 @@
-package com.github.ozzymar.talismansmega.objects;
+package com.github.ozzymar.talismansmega.ui;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.ui.ShopMenu;
+import com.github.ozzymar.talismansmega.ui.guis.ShopMenu;
 
 public class Menus {
 
@@ -12,11 +12,11 @@ public class Menus {
         this.talismansMega = talismansMega;
     }
 
-    public void loadMenus() {
+    public void load() {
         this.shopMenu = new ShopMenu(talismansMega);
     }
 
-    public void unloadMenus() {
+    public void unload() {
         this.shopMenu = null;
     }
 

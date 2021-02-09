@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.tasks.interact;
+package com.github.ozzymar.talismansmega.effects.interact;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;

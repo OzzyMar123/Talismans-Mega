@@ -1,29 +1,28 @@
-package com.github.ozzymar.talismansmega.tasks.interact;
+package com.github.ozzymar.talismansmega.effects.interact;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class ENDERCHEST_EFFECT extends AbstractInteractiveEffect {
+public class WORKBENCH_EFFECT extends AbstractInteractiveEffect {
 
-
-    public ENDERCHEST_EFFECT(TalismansMega talismansMega) {
+    public WORKBENCH_EFFECT(TalismansMega talismansMega) {
         super(talismansMega);
     }
 
     @Override
     public AbstractTalisman talismanNeeded() {
-        return talismansMega.getTalismans().getEnderTalisman();
+        return talismansMega.getTalismans().getWorkbenchTalisman();
     }
 
     @Override
     public YamlConfiguration config() {
-        return talismansMega.getConfigs().getEnderchestTalismanConfig().getYaml();
+        return talismansMega.getConfigs().getWorkbenchTalismanConfig().getYaml();
     }
 
     @Override
     public void interactHandler(PlayerInteractEvent event) {
-        event.getPlayer().openInventory(event.getPlayer().getEnderChest());
+        event.getPlayer().openWorkbench(event.getPlayer().getLocation(), true);
     }
 }

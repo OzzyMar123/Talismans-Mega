@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.utils.eco;
+package com.github.ozzymar.talismansmega.utils.economy;
 
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.Plugin;

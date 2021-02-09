@@ -39,25 +39,31 @@
             <relocation>
               <pattern>com.cryptomorin.xseries</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.github.ozzymar.talismansmega.utils.xseries
+              <shadedPattern>com.github.ozzymar.talismansmega.apis.xseries
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.nbtapi</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.apis.nbtapi
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.annotations</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.apis.nbtapi
               </shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.tr7zw.nbtinjector</pattern>
               <!-- Be sure to change the package below -->
-              <shadedPattern>com.github.ozzymar.talismansmega.utils.nbtapi
+              <shadedPattern>com.github.ozzymar.talismansmega.apis.nbtapi
+              </shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>com.github.ozzymar.marsapi</pattern>
+              <!-- Be sure to change the package below -->
+              <shadedPattern>com.github.ozzymar.talismansmega.apis.marsapi
               </shadedPattern>
             </relocation>
           </relocations>
@@ -122,6 +128,11 @@
       <groupId>de.tr7zw</groupId>
       <artifactId>item-nbt-api-plugin</artifactId>
       <version>2.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.OzzyMar-DEV</groupId>
+      <artifactId>Mars-API</artifactId>
+      <version>0.0.6</version>
     </dependency>
   </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.utils.eco;
+package com.github.ozzymar.talismansmega.utils.economy;
 
 import com.cryptomorin.xseries.XSound;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;

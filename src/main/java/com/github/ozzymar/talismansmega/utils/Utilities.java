@@ -1,38 +1,35 @@
-package com.github.ozzymar.talismansmega.objects;
+package com.github.ozzymar.talismansmega.utils;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.NBT_KEYS;
-import com.github.ozzymar.talismansmega.utils.TUtils;
-import com.github.ozzymar.talismansmega.utils.eco.PlayerEconomyManager;
-import com.github.ozzymar.talismansmega.utils.eco.ServerEconomyManager;
-import com.github.ozzymar.talismansmega.utils.string.UUIDUtils;
+import com.github.ozzymar.talismansmega.utils.economy.PlayerEconomyManager;
+import com.github.ozzymar.talismansmega.utils.economy.ServerEconomyManager;
+import com.github.ozzymar.talismansmega.utils.talisman.TUtils;
 
 public class Utilities {
 
     private final TalismansMega talismansMega;
     private PlayerEconomyManager playerEconomyManager;
     private ServerEconomyManager serverEconomyManager;
-    private UUIDUtils uuidUtils;
     private TUtils tUtils;
     private NBT_KEYS nbt_keys;
+
     public Utilities(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }
 
-    public void loadUtilities() {
-        this.nbt_keys = new NBT_KEYS();
+    public void load() {
         this.serverEconomyManager = new ServerEconomyManager();
         this.playerEconomyManager = new PlayerEconomyManager(serverEconomyManager);
-        this.uuidUtils = new UUIDUtils();
+        this.nbt_keys = new NBT_KEYS();
         this.tUtils = new TUtils(talismansMega);
     }
 
-    public void unloadUtilities() {
+    public void unload() {
+        this.tUtils = null;
         this.nbt_keys = null;
         this.playerEconomyManager = null;
         this.serverEconomyManager = null;
-        this.uuidUtils = null;
-        this.tUtils = null;
     }
 
     public PlayerEconomyManager getPlayerEconomyManager() {
@@ -41,10 +38,6 @@ public class Utilities {
 
     public ServerEconomyManager getServerEconomyManager() {
         return serverEconomyManager;
-    }
-
-    public UUIDUtils getUUIDUtils() {
-        return uuidUtils;
     }
 
     public TUtils getTUtils() {
