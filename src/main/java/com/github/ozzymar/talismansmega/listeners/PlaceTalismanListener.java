@@ -1,6 +1,5 @@
 package com.github.ozzymar.talismansmega.listeners;
 
-import com.cryptomorin.xseries.XMaterial;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

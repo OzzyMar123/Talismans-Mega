@@ -91,7 +91,6 @@ public class TUtils {
 
     public boolean isTalisman(ItemStack item) {
         NBTItem nbti = new NBTItem(item);
-        if (nbti == null) return false;
         return nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN);
     }
 }
