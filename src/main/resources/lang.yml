@@ -10,4 +10,5 @@ messages:
   more-args-needed: '&7&l[&c!&7&l]&4 More arguments are needed to run this command!'
   less-args-needed: '&7&l[&c!&7&l]&4 Less arguments are needed to run this command!'
   player-invalid: '&7&l[&c!&7&l]&4 This player does not exist or is not online!'
-  reload: '&7&l[&c!&7&l]&a Reload complete!'
+  talisman-invalid: '&7&l[&c!&7&l]&4 That is an invalid Talisman type, please choose a different Talisman!'
+  reloaded: '&7&l[&c!&7&l]&a Reload complete!'

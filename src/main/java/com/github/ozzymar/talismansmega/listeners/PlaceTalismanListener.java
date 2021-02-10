@@ -18,9 +18,12 @@ public class PlaceTalismanListener implements Listener {
 
     @EventHandler
     public void onBlockMainPlaceMain(BlockPlaceEvent event) {
-        Player player = event.getPlayer();
-        ItemStack hand = player.getInventory().getItemInHand();
-        if (!(event.getHand() == EquipmentSlot.HAND)) return;
-        if (talismansMega.getUtilities().getTUtils().isTalisman(hand)) event.setCancelled(true);
+        try {
+            Player player = event.getPlayer();
+            ItemStack hand = player.getInventory().getItemInHand();
+            if (talismansMega.getUtilities().getTUtils().isTalisman(hand)) event.setCancelled(true);
+        } catch (Exception ex) {
+            // Ignore exception as its due to multi version support
+        }
     }
 }

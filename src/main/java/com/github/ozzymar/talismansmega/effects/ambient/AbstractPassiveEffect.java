@@ -1,5 +1,6 @@
 package com.github.ozzymar.talismansmega.effects.ambient;
 
+import com.cryptomorin.xseries.XPotion;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import de.tr7zw.nbtapi.NBTItem;
@@ -27,8 +28,6 @@ public abstract class AbstractPassiveEffect extends BukkitRunnable {
 
     public abstract int everyTickToCheck();
 
-    public abstract YamlConfiguration config();
-
     @Override
     public void run() {
         Bukkit.getOnlinePlayers()
@@ -41,7 +40,7 @@ public abstract class AbstractPassiveEffect extends BukkitRunnable {
                         NBTItem nbti = new NBTItem(itemStack);
                         if (!nbti.hasKey(talismanNeeded().talismanType())) return;
 
-                        if (!config().getStringList("enabled-worlds").contains(player.getWorld().getName())) return;
+                        if (!talismanNeeded().config().getStringList("enabled-worlds").contains(player.getWorld().getName())) return;
                         Arrays.stream(effects())
                             .forEach(player::addPotionEffect);
                     }));

@@ -15,6 +15,7 @@ public class Talismans implements IInitialise {
     private QUICKHANDS_TALISMAN quickhandsTalisman;
     private WORKBENCH_TALISMAN workbenchTalisman;
     private ENDER_TALISMAN enderTalisman;
+    private WATERBREATH_TALISMAN waterbreathTalisman;
 
     public Talismans(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
@@ -28,6 +29,7 @@ public class Talismans implements IInitialise {
         this.ironskinTalisman = new IRONSKIN_TALISMAN(talismansMega);
         this.moltenskinTalisman = new MOLTENSKIN_TALISMAN(talismansMega);
         this.quickhandsTalisman = new QUICKHANDS_TALISMAN(talismansMega);
+        this.waterbreathTalisman = new WATERBREATH_TALISMAN(talismansMega);
         this.workbenchTalisman = new WORKBENCH_TALISMAN(talismansMega);
         this.enderTalisman = new ENDER_TALISMAN(talismansMega);
     }
@@ -40,6 +42,7 @@ public class Talismans implements IInitialise {
         this.ironskinTalisman = null;
         this.moltenskinTalisman = null;
         this.quickhandsTalisman = null;
+        this.waterbreathTalisman = null;
         this.workbenchTalisman = null;
         this.enderTalisman = null;
     }
@@ -66,6 +69,10 @@ public class Talismans implements IInitialise {
 
     public QUICKHANDS_TALISMAN getQuickhandsTalisman() {
         return quickhandsTalisman;
+    }
+
+    public WATERBREATH_TALISMAN getWaterbreathTalisman() {
+        return waterbreathTalisman;
     }
 
     public WORKBENCH_TALISMAN getWorkbenchTalisman() {

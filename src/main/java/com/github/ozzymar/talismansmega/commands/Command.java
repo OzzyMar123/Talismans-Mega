@@ -27,7 +27,9 @@ public class Command implements ICommand {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
         if (!player.hasPermission("talismans.base")) {
-            player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+            player.sendMessage(ColorFormatter.format(
+                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")
+            ));
             return true;
         }
         if (args.length == 0) {
@@ -37,75 +39,99 @@ public class Command implements ICommand {
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("give")) {
                 if (!player.hasPermission("talismans.base.give")) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")
+                    ));
                     return true;
                 }
                 if (args.length < 3) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")
+                    ));
                     return true;
                 }
                 if (args.length > 3) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(
+                        ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")
+                        ));
                     return true;
                 }
                 Player target = Bukkit.getPlayerExact(args[1]);
                 if (target == null) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")
+                    ));
                     return true;
                 }
                 switch (args[2]) {
                     case "flash":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getFlashTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getFlashTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getFlashTalisman().getItem());
                         }
                         break;
                     case "health":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getHealthTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getHealthTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getHealthTalisman().getItem());
                         }
                         break;
                     case "warrior":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getWarriorTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getWarriorTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getWarriorTalisman().getItem());
                         }
                         break;
                     case "ironskin":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getIronskinTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getIronskinTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getIronskinTalisman().getItem());
                         }
                         break;
                     case "moltenskin":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getMoltenskinTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                         }
                         break;
                     case "quickhands":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getQuickhandsTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                         }
                         break;
+                    case "waterbreath":
+                        if (target.getInventory().firstEmpty() == -1) {
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getWaterbreathTalisman().getItem());
+                        } else {
+                            target.getInventory().addItem(talismansMega.getTalismans().getWaterbreathTalisman().getItem());
+                        }
+                        break;
                     case "workbench":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getWorkbenchTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                         }
                         break;
                     case "enderchest":
                         if (target.getInventory().firstEmpty() == -1) {
-                            target.getWorld().dropItemNaturally(target.getLocation(), talismansMega.getTalismans().getEnderTalisman().getItem());
+                            target.getWorld().dropItemNaturally(target.getLocation(),
+                                talismansMega.getTalismans().getEnderTalisman().getItem());
                         } else {
                             target.getInventory().addItem(talismansMega.getTalismans().getEnderTalisman().getItem());
                         }
@@ -113,27 +139,40 @@ public class Command implements ICommand {
                         talismansMega.getUtilities().getTUtils().talismans()
                             .forEach(talisman -> target.getInventory().addItem(talisman));
                         break;
+                    default:
+                        target.sendMessage(ColorFormatter.format(
+                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.talisman-invalid")
+                        ));
+                        break;
                 }
             }
             if (args[0].equalsIgnoreCase("shop")) {
                 if (!player.hasPermission("talismans.base.shop")) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")
+                    ));
                     return true;
                 }
                 if (args.length > 1) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")
+                    ));
                     return true;
                 }
                 player.openInventory(talismansMega.getMenus().getShopMenu().getInventory());
             }
-
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!player.hasPermission("talismans.base.reload")) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                    player.sendMessage(
+                        ColorFormatter.format(
+                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")
+                        ));
                     return true;
                 }
                 if (args.length > 1) {
-                    player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                    player.sendMessage(ColorFormatter.format(
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")
+                    ));
                     return true;
                 }
                 talismansMega.getUtilities().getTUtils().reload(player);
@@ -178,6 +217,7 @@ public class Command implements ICommand {
                 list.add("ironskin");
                 list.add("moltenskin");
                 list.add("quickhands");
+                list.add("waterbreath");
                 list.add("workbench");
                 list.add("enderchest");
                 list.add("*");

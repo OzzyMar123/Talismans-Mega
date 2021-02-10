@@ -14,6 +14,8 @@ public class Configs implements IInitialise {
     private YamlConfig ironskinTalismanConfig;
     private YamlConfig moltenskinTalismanConfig;
     private YamlConfig quickhandsTalismanConfig;
+    private YamlConfig waterbreathTalismanConfig;
+
     private YamlConfig workbenchTalismanConfig;
     private YamlConfig enderchestTalismanConfig;
 
@@ -31,6 +33,8 @@ public class Configs implements IInitialise {
         this.ironskinTalismanConfig = new YamlConfig(talismansMega, "items/talismans/ironskin.yml");
         this.moltenskinTalismanConfig = new YamlConfig(talismansMega, "items/talismans/moltenskin.yml");
         this.quickhandsTalismanConfig = new YamlConfig(talismansMega, "items/talismans/quickhands.yml");
+        this.waterbreathTalismanConfig = new YamlConfig(talismansMega, "items/talismans/waterbreath.yml");
+
         this.workbenchTalismanConfig = new YamlConfig(talismansMega, "items/talismans/workbench.yml");
         this.enderchestTalismanConfig = new YamlConfig(talismansMega, "items/talismans/enderchest.yml");
     }
@@ -45,6 +49,7 @@ public class Configs implements IInitialise {
         this.ironskinTalismanConfig = null;
         this.moltenskinTalismanConfig = null;
         this.quickhandsTalismanConfig = null;
+        this.waterbreathTalismanConfig = null;
         this.workbenchTalismanConfig = null;
         this.enderchestTalismanConfig = null;
     }
@@ -79,6 +84,10 @@ public class Configs implements IInitialise {
 
     public YamlConfig getQuickhandsTalismanConfig() {
         return quickhandsTalismanConfig;
+    }
+
+    public YamlConfig getWaterbreathTalismanConfig() {
+        return waterbreathTalismanConfig;
     }
 
     public YamlConfig getWorkbenchTalismanConfig() {

@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 public class OffPlaceTalismanListener implements Listener {
@@ -18,9 +17,12 @@ public class OffPlaceTalismanListener implements Listener {
 
     @EventHandler
     public void onBlockOffPlaceMain(BlockPlaceEvent event) {
-        Player player = event.getPlayer();
-        ItemStack hand = player.getInventory().getItemInOffHand();
-        if (!(event.getHand() == EquipmentSlot.OFF_HAND)) return;
-        if (talismansMega.getUtilities().getTUtils().isTalisman(hand)) event.setCancelled(true);
+        try {
+            Player player = event.getPlayer();
+            ItemStack hand = player.getInventory().getItemInOffHand();
+            if (talismansMega.getUtilities().getTUtils().isTalisman(hand)) event.setCancelled(true);
+        } catch (Exception ex) {
+            // Ignore exception as its due to multi version support
+        }
     }
 }

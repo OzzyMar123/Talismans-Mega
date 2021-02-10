@@ -15,6 +15,7 @@ public class Effects implements IInitialise {
     private IRONSKIN_EFFECT ironskin_effect;
     private MOLTENSKIN_EFFECT moltenskin_effect;
     private QUICKHANDS_EFFECT quickhands_effect;
+    private WATERBREATH_EFFECT waterbreath_effect;
     private WORKBENCH_EFFECT workbench_effect;
     private ENDERCHEST_EFFECT enderchest_effect;
 
@@ -30,6 +31,7 @@ public class Effects implements IInitialise {
         this.ironskin_effect = new IRONSKIN_EFFECT(talismansMega);
         this.moltenskin_effect = new MOLTENSKIN_EFFECT(talismansMega);
         this.quickhands_effect = new QUICKHANDS_EFFECT(talismansMega);
+        this.waterbreath_effect = new WATERBREATH_EFFECT(talismansMega);
         this.workbench_effect = new WORKBENCH_EFFECT(talismansMega);
         this.enderchest_effect = new ENDERCHEST_EFFECT(talismansMega);
     }
@@ -42,6 +44,7 @@ public class Effects implements IInitialise {
         this.ironskin_effect = null;
         this.moltenskin_effect = null;
         this.quickhands_effect = null;
+        this.waterbreath_effect = null;
         this.workbench_effect = null;
         this.enderchest_effect = null;
     }
@@ -68,6 +71,10 @@ public class Effects implements IInitialise {
 
     public QUICKHANDS_EFFECT getQuickhandsEffect() {
         return quickhands_effect;
+    }
+
+    public WATERBREATH_EFFECT getWaterbreathEffect() {
+        return waterbreath_effect;
     }
 
     public WORKBENCH_EFFECT getWorkbenchEffect() {

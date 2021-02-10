@@ -45,6 +45,7 @@ public class ShopMenu {
         inv.setItem(16, talismansMega.getTalismans().getIronskinTalisman().itemWithPriceLore());
         inv.setItem(18, talismansMega.getTalismans().getMoltenskinTalisman().itemWithPriceLore());
         inv.setItem(20, talismansMega.getTalismans().getQuickhandsTalisman().itemWithPriceLore());
+        inv.setItem(22, talismansMega.getTalismans().getWaterbreathTalisman().itemWithPriceLore());
 
         inv.setItem(24, talismansMega.getTalismans().getWorkbenchTalisman().itemWithPriceLore());
         inv.setItem(26, talismansMega.getTalismans().getEnderTalisman().itemWithPriceLore());
@@ -89,6 +90,10 @@ public class ShopMenu {
             if (nbti.hasKey(talismansMega.getTalismans().getQuickhandsTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
                     .handlePurchase(player, talismansMega.getTalismans().getQuickhandsTalisman());
+            }
+            if (nbti.hasKey(talismansMega.getTalismans().getWaterbreathTalisman().talismanType())) {
+                talismansMega.getUtilities().getPlayerEconomyManager()
+                    .handlePurchase(player, talismansMega.getTalismans().getWaterbreathTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getWorkbenchTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()

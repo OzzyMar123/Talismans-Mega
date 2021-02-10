@@ -2,13 +2,16 @@ package com.github.ozzymar.talismansmega.utils.talisman;
 
 import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
+import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import com.github.ozzymar.talismansmega.items.types.*;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TUtils {
@@ -30,6 +33,7 @@ public class TUtils {
             talismansMega.getConfigs().getIronskinTalismanConfig().reload();
             talismansMega.getConfigs().getMoltenskinTalismanConfig().reload();
             talismansMega.getConfigs().getQuickhandsTalismanConfig().reload();
+            talismansMega.getConfigs().getWaterbreathTalismanConfig().reload();
             talismansMega.getConfigs().getWorkbenchTalismanConfig().reload();
             talismansMega.getConfigs().getEnderchestTalismanConfig().reload();
 
@@ -47,17 +51,19 @@ public class TUtils {
         }
     }
 
+
     public List<ItemStack> talismans() {
-        List<ItemStack> t = new ArrayList<>();
-        t.add(new FLASH_TALISMAN(talismansMega).getItem());
-        t.add(new HEALTH_TALISMAN(talismansMega).getItem());
-        t.add(new WARRIOR_TALISMAN(talismansMega).getItem());
-        t.add(new IRONSKIN_TALISMAN(talismansMega).getItem());
-        t.add(new MOLTENSKIN_TALISMAN(talismansMega).getItem());
-        t.add(new QUICKHANDS_TALISMAN(talismansMega).getItem());
-        t.add(new WORKBENCH_TALISMAN(talismansMega).getItem());
-        t.add(new ENDER_TALISMAN(talismansMega).getItem());
-        return t;
+        return new ArrayList<>(Arrays.asList(
+            talismansMega.getTalismans().getFlashTalisman().getItem(),
+            talismansMega.getTalismans().getHealthTalisman().getItem(),
+            talismansMega.getTalismans().getWarriorTalisman().getItem(),
+            talismansMega.getTalismans().getIronskinTalisman().getItem(),
+            talismansMega.getTalismans().getMoltenskinTalisman().getItem(),
+            talismansMega.getTalismans().getQuickhandsTalisman().getItem(),
+            talismansMega.getTalismans().getWaterbreathTalisman().getItem(),
+            talismansMega.getTalismans().getWorkbenchTalisman().getItem(),
+            talismansMega.getTalismans().getEnderTalisman().getItem()
+        ));
     }
 
     public void update(ItemStack item) {
@@ -80,6 +86,9 @@ public class TUtils {
         }
         if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_QUICKHANDS_TALISMAN)) {
             item.setItemMeta(talismansMega.getTalismans().getQuickhandsTalisman().getItem().getItemMeta());
+        }
+        if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_WATERBREATH_TALISMAN)) {
+            item.setItemMeta(talismansMega.getTalismans().getWaterbreathTalisman().getItem().getItemMeta());
         }
         if (nbti.hasKey(talismansMega.getUtilities().getNBTKeys().IS_WORKBENCH_TALISMAN)) {
             item.setItemMeta(talismansMega.getTalismans().getWorkbenchTalisman().getItem().getItemMeta());
