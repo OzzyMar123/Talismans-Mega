@@ -2,8 +2,9 @@ package com.github.ozzymar.talismansmega.ui;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.ui.guis.ShopMenu;
+import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 
-public class Menus {
+public class Menus implements IInitialise {
 
     private final TalismansMega talismansMega;
     private ShopMenu shopMenu;
@@ -12,10 +13,12 @@ public class Menus {
         this.talismansMega = talismansMega;
     }
 
+    @Override
     public void load() {
         this.shopMenu = new ShopMenu(talismansMega);
     }
 
+    @Override
     public void unload() {
         this.shopMenu = null;
     }

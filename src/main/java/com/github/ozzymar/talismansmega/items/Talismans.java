@@ -2,8 +2,9 @@ package com.github.ozzymar.talismansmega.items;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.types.*;
+import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 
-public class Talismans {
+public class Talismans implements IInitialise {
 
     private final TalismansMega talismansMega;
     private FLASH_TALISMAN flashTalisman;
@@ -19,6 +20,7 @@ public class Talismans {
         this.talismansMega = talismansMega;
     }
 
+    @Override
     public void load() {
         this.flashTalisman = new FLASH_TALISMAN(talismansMega);
         this.healthTalisman = new HEALTH_TALISMAN(talismansMega);
@@ -30,6 +32,7 @@ public class Talismans {
         this.enderTalisman = new ENDER_TALISMAN(talismansMega);
     }
 
+    @Override
     public void unload() {
         this.flashTalisman = null;
         this.healthTalisman = null;

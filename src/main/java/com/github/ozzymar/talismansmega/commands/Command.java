@@ -2,6 +2,7 @@ package com.github.ozzymar.talismansmega.commands;
 
 import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
+import com.github.ozzymar.talismansmega.interfaces.ICommand;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

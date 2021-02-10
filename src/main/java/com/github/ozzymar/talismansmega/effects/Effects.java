@@ -4,8 +4,9 @@ import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.effects.ambient.*;
 import com.github.ozzymar.talismansmega.effects.interact.ENDERCHEST_EFFECT;
 import com.github.ozzymar.talismansmega.effects.interact.WORKBENCH_EFFECT;
+import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 
-public class Effects {
+public class Effects implements IInitialise {
 
     private final TalismansMega talismansMega;
     private FLASH_EFFECT flash_effect;
@@ -21,6 +22,7 @@ public class Effects {
         this.talismansMega = talismansMega;
     }
 
+    @Override
     public void load() {
         this.flash_effect = new FLASH_EFFECT(talismansMega);
         this.health_effect = new HEALTH_EFFECT(talismansMega);
@@ -32,6 +34,7 @@ public class Effects {
         this.enderchest_effect = new ENDERCHEST_EFFECT(talismansMega);
     }
 
+    @Override
     public void unload() {
         this.flash_effect = null;
         this.health_effect = null;

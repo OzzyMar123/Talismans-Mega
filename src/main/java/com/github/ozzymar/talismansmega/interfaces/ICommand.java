@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.commands;
+package com.github.ozzymar.talismansmega.interfaces;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

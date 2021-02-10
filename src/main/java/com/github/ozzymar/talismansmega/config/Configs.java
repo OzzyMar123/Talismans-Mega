@@ -1,8 +1,9 @@
 package com.github.ozzymar.talismansmega.config;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
+import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 
-public class Configs {
+public class Configs implements IInitialise {
 
     private final TalismansMega talismansMega;
     private YamlConfig langConfig;
@@ -20,6 +21,7 @@ public class Configs {
         this.talismansMega = talismansMega;
     }
 
+    @Override
     public void load() {
         this.langConfig = new YamlConfig(talismansMega, "lang.yml");
         this.menusConfig = new YamlConfig(talismansMega, "menus.yml");
@@ -33,6 +35,7 @@ public class Configs {
         this.enderchestTalismanConfig = new YamlConfig(talismansMega, "items/talismans/enderchest.yml");
     }
 
+    @Override
     public void unload() {
         this.langConfig = null;
         this.menusConfig = null;

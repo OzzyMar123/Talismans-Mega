@@ -1,12 +1,13 @@
 package com.github.ozzymar.talismansmega.utils;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
+import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 import com.github.ozzymar.talismansmega.items.NBT_KEYS;
 import com.github.ozzymar.talismansmega.utils.economy.PlayerEconomyManager;
 import com.github.ozzymar.talismansmega.utils.economy.ServerEconomyManager;
 import com.github.ozzymar.talismansmega.utils.talisman.TUtils;
 
-public class Utilities {
+public class Utilities implements IInitialise {
 
     private final TalismansMega talismansMega;
     private PlayerEconomyManager playerEconomyManager;
@@ -18,6 +19,7 @@ public class Utilities {
         this.talismansMega = talismansMega;
     }
 
+    @Override
     public void load() {
         this.serverEconomyManager = new ServerEconomyManager();
         this.playerEconomyManager = new PlayerEconomyManager(serverEconomyManager);
@@ -25,6 +27,7 @@ public class Utilities {
         this.tUtils = new TUtils(talismansMega);
     }
 
+    @Override
     public void unload() {
         this.tUtils = null;
         this.nbt_keys = null;
