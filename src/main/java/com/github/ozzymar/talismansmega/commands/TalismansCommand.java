@@ -2,28 +2,26 @@ package com.github.ozzymar.talismansmega.commands;
 
 import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.interfaces.ICommand;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Command implements ICommand {
-
-    //CMD    : talismans [give] [player] [talisman]
-    //ARGS   :   null       0       1        2
-    //LENGTH :    0        1        2       3
+public class TalismansCommand implements TabExecutor {
 
     private final TalismansMega talismansMega;
 
-    public Command(TalismansMega talismansMega) {
+    public TalismansCommand(TalismansMega talismansMega) {
         this.talismansMega = talismansMega;
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command command, String alias, String[] args) {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
         if (!player.hasPermission("talismans.base")) {
@@ -182,7 +180,7 @@ public class Command implements ICommand {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
             List<String> list = new ArrayList<>();
             list.add("give");
@@ -232,6 +230,6 @@ public class Command implements ICommand {
             override.add(" ");
             return override;
         }
-        return null;
+        return Collections.emptyList();
     }
 }

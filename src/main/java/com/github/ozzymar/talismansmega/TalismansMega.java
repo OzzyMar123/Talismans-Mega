@@ -2,7 +2,7 @@ package com.github.ozzymar.talismansmega;
 
 import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.marsapi.api.enums.VersionChecker;
-import com.github.ozzymar.talismansmega.commands.Command;
+import com.github.ozzymar.talismansmega.commands.TalismansCommand;
 import com.github.ozzymar.talismansmega.config.Configs;
 import com.github.ozzymar.talismansmega.effects.Effects;
 import com.github.ozzymar.talismansmega.items.Talismans;
@@ -45,7 +45,7 @@ public class TalismansMega extends JavaPlugin {
             return;
         }
 
-        this.getServer().getPluginCommand("talismans").setExecutor(new Command(this));
+        this.getServer().getPluginCommand("talismans").setExecutor(new TalismansCommand(this));
 
         this.getServer().getPluginManager().registerEvents(new JoinListener(this), this);
         this.getServer().getPluginManager().registerEvents(new WearHelmetListener(this), this);

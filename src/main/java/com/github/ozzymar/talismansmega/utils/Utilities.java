@@ -1,5 +1,6 @@
 package com.github.ozzymar.talismansmega.utils;
 
+import com.github.ozzymar.marsapi.api.item.ItemSerializer;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.interfaces.IInitialise;
 import com.github.ozzymar.talismansmega.items.NBT_KEYS;
@@ -10,6 +11,7 @@ import com.github.ozzymar.talismansmega.utils.talisman.TUtils;
 public class Utilities implements IInitialise {
 
     private final TalismansMega talismansMega;
+    private ItemSerializer itemSerializer;
     private PlayerEconomyManager playerEconomyManager;
     private ServerEconomyManager serverEconomyManager;
     private TUtils tUtils;
@@ -21,6 +23,7 @@ public class Utilities implements IInitialise {
 
     @Override
     public void load() {
+        this.itemSerializer = new ItemSerializer();
         this.serverEconomyManager = new ServerEconomyManager();
         this.playerEconomyManager = new PlayerEconomyManager(serverEconomyManager);
         this.nbt_keys = new NBT_KEYS();
@@ -29,10 +32,15 @@ public class Utilities implements IInitialise {
 
     @Override
     public void unload() {
+        this.itemSerializer = null;
         this.tUtils = null;
         this.nbt_keys = null;
         this.playerEconomyManager = null;
         this.serverEconomyManager = null;
+    }
+
+    public ItemSerializer getItemSerializer() {
+        return itemSerializer;
     }
 
     public PlayerEconomyManager getPlayerEconomyManager() {
