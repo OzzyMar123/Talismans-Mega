@@ -2,13 +2,10 @@ package com.github.ozzymar.talismansmega.utils.talisman;
 
 import com.github.ozzymar.marsapi.api.colors.ColorFormatter;
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import com.github.ozzymar.talismansmega.items.types.*;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.Arrays;

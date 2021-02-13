@@ -1,11 +1,9 @@
 package com.github.ozzymar.talismansmega.effects.ambient;
 
-import com.cryptomorin.xseries.XPotion;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -40,7 +38,8 @@ public abstract class AbstractPassiveEffect extends BukkitRunnable {
                         NBTItem nbti = new NBTItem(itemStack);
                         if (!nbti.hasKey(talismanNeeded().talismanType())) return;
 
-                        if (!talismanNeeded().config().getStringList("enabled-worlds").contains(player.getWorld().getName())) return;
+                        if (!talismanNeeded().config().getStringList("enabled-worlds").contains(player.getWorld().getName()))
+                            return;
                         Arrays.stream(effects())
                             .forEach(player::addPotionEffect);
                     }));

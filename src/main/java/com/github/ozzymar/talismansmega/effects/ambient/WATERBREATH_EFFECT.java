@@ -4,7 +4,6 @@ import com.cryptomorin.xseries.XPotion;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class WATERBREATH_EFFECT extends AbstractPassiveEffect {
 

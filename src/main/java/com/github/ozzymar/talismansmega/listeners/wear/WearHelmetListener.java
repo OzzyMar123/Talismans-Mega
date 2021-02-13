@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.listeners;
+package com.github.ozzymar.talismansmega.listeners.wear;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import de.tr7zw.nbtapi.NBTItem;

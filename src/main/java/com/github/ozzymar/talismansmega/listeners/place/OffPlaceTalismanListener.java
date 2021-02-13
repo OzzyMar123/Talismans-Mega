@@ -1,4 +1,4 @@
-package com.github.ozzymar.talismansmega.listeners;
+package com.github.ozzymar.talismansmega.listeners.place;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
 import org.bukkit.entity.Player;

@@ -1,8 +1,8 @@
 package com.github.ozzymar.talismansmega.ui;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.ui.guis.ShopMenu;
 import com.github.ozzymar.talismansmega.interfaces.IInitialise;
+import com.github.ozzymar.talismansmega.ui.guis.ShopMenu;
 
 public class Menus implements IInitialise {
 

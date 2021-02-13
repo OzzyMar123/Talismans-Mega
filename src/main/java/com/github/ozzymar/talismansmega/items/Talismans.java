@@ -1,8 +1,8 @@
 package com.github.ozzymar.talismansmega.items;
 
 import com.github.ozzymar.talismansmega.TalismansMega;
-import com.github.ozzymar.talismansmega.items.types.*;
 import com.github.ozzymar.talismansmega.interfaces.IInitialise;
+import com.github.ozzymar.talismansmega.items.types.*;
 
 public class Talismans implements IInitialise {
 

@@ -3,9 +3,7 @@ package com.github.ozzymar.talismansmega.effects.ambient;
 import com.cryptomorin.xseries.XPotion;
 import com.github.ozzymar.talismansmega.TalismansMega;
 import com.github.ozzymar.talismansmega.items.AbstractTalisman;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class FLASH_EFFECT extends AbstractPassiveEffect {
 
