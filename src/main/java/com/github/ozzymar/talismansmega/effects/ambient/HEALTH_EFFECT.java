@@ -20,7 +20,7 @@ public class HEALTH_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(XPotion.REGENERATION.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.REGENERATION.parsePotionEffectType(), 35, 2)
         };
     }
 

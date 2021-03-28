@@ -19,7 +19,7 @@ public class WARRIOR_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(XPotion.INCREASE_DAMAGE.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.INCREASE_DAMAGE.parsePotionEffectType(), 35, 2)
         };
     }
 

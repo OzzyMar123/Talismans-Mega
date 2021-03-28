@@ -35,14 +35,14 @@ public class TUtils {
             talismansMega.getConfigs().getEnderchestTalismanConfig().reload();
 
             Bukkit.getOnlinePlayers().stream()
-                .map(p -> (Player) p)
-                .forEach(p ->
-                {
-                    for (ItemStack item : p.getInventory().getContents()) {
-                        if (item == null) return;
-                        update(item);
-                    }
-                });
+                    .map(p -> (Player) p)
+                    .forEach(p ->
+                    {
+                        for (ItemStack item : p.getInventory().getContents()) {
+                            if (item == null) return;
+                            update(item);
+                        }
+                    });
         } catch (Exception ex) {
             talismansMega.getConfigs().load();
         }
@@ -64,14 +64,14 @@ public class TUtils {
             talismansMega.getConfigs().getEnderchestTalismanConfig().reload();
 
             Bukkit.getOnlinePlayers().stream()
-                .map(p -> (Player) p)
-                .forEach(p ->
-                {
-                    for (ItemStack item : p.getInventory().getContents()) {
-                        if (item == null) return;
-                        update(item);
-                    }
-                });
+                    .map(p -> (Player) p)
+                    .forEach(p ->
+                    {
+                        for (ItemStack item : p.getInventory().getContents()) {
+                            if (item == null) return;
+                            update(item);
+                        }
+                    });
             player.sendMessage(ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.reloaded")));
         } catch (Exception ex) {
             talismansMega.getConfigs().load();
@@ -81,15 +81,15 @@ public class TUtils {
 
     public List<ItemStack> talismans() {
         return new ArrayList<>(Arrays.asList(
-            talismansMega.getTalismans().getFlashTalisman().getItem(),
-            talismansMega.getTalismans().getHealthTalisman().getItem(),
-            talismansMega.getTalismans().getWarriorTalisman().getItem(),
-            talismansMega.getTalismans().getIronskinTalisman().getItem(),
-            talismansMega.getTalismans().getMoltenskinTalisman().getItem(),
-            talismansMega.getTalismans().getQuickhandsTalisman().getItem(),
-            talismansMega.getTalismans().getWaterbreathTalisman().getItem(),
-            talismansMega.getTalismans().getWorkbenchTalisman().getItem(),
-            talismansMega.getTalismans().getEnderTalisman().getItem()
+                talismansMega.getTalismans().getFlashTalisman().getItem(),
+                talismansMega.getTalismans().getHealthTalisman().getItem(),
+                talismansMega.getTalismans().getWarriorTalisman().getItem(),
+                talismansMega.getTalismans().getIronskinTalisman().getItem(),
+                talismansMega.getTalismans().getMoltenskinTalisman().getItem(),
+                talismansMega.getTalismans().getQuickhandsTalisman().getItem(),
+                talismansMega.getTalismans().getWaterbreathTalisman().getItem(),
+                talismansMega.getTalismans().getWorkbenchTalisman().getItem(),
+                talismansMega.getTalismans().getEnderTalisman().getItem()
         ));
     }
 

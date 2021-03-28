@@ -25,7 +25,7 @@ public class ShopMenu {
 
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(
-            null, 36, ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")));
+                null, 36, ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")));
 
         for (int emptySlot = 0; emptySlot < inv.getSize(); emptySlot++) {
             if (inv.getItem(emptySlot) == null) {
@@ -58,7 +58,7 @@ public class ShopMenu {
         public void onShopClick(InventoryClickEvent event) {
 
             if (!event.getView().getTitle().equalsIgnoreCase(
-                ChatColor.stripColor(ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")))))
+                    ChatColor.stripColor(ColorFormatter.format(talismansMega.getConfigs().getMenusConfig().getYaml().getString("shop-menu.title")))))
                 return;
 
             Player player = (Player) event.getWhoClicked();
@@ -69,39 +69,39 @@ public class ShopMenu {
             NBTItem nbti = new NBTItem(event.getCurrentItem());
             if (nbti.hasKey(talismansMega.getTalismans().getFlashTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getFlashTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getFlashTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getHealthTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getHealthTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getHealthTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getWarriorTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getWarriorTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getWarriorTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getIronskinTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getIronskinTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getIronskinTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getMoltenskinTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getMoltenskinTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getMoltenskinTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getQuickhandsTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getQuickhandsTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getQuickhandsTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getWaterbreathTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getWaterbreathTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getWaterbreathTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getWorkbenchTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getWorkbenchTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getWorkbenchTalisman());
             }
             if (nbti.hasKey(talismansMega.getTalismans().getEnderTalisman().talismanType())) {
                 talismansMega.getUtilities().getPlayerEconomyManager()
-                    .handlePurchase(player, talismansMega.getTalismans().getEnderTalisman());
+                        .handlePurchase(player, talismansMega.getTalismans().getEnderTalisman());
             }
         }
     }

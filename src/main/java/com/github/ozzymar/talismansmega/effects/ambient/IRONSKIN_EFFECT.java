@@ -19,7 +19,7 @@ public class IRONSKIN_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(XPotion.DAMAGE_RESISTANCE.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.DAMAGE_RESISTANCE.parsePotionEffectType(), 35, 2)
         };
     }
 

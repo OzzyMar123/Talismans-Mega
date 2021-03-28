@@ -41,7 +41,7 @@ public abstract class AbstractTalisman {
         item.getItem().setItemMeta(meta);
         // NBT
         item.setString(talismansMega.getUtilities().getNBTKeys().TALISMAN_UUID,
-            new Identifier(16, 2).build());
+                new Identifier(16, 2).build());
         item.setString(talismansMega.getUtilities().getNBTKeys().IS_TALISMAN, "");
 
         item.setString(talismanType(), "");
@@ -55,7 +55,7 @@ public abstract class AbstractTalisman {
         if (meta == null) return XMaterial.AIR.parseItem();
         List<String> lore = new ArrayList<>();
         talismansMega.getConfigs().getMenusConfig().getYaml().getStringList("shop-menu.price-lore-of-talismans")
-            .forEach(str -> lore.add(ColorFormatter.format(str.replace("!price!", String.valueOf(price())))));
+                .forEach(str -> lore.add(ColorFormatter.format(str.replace("!price!", String.valueOf(price())))));
         meta.setLore(lore);
         item.setItemMeta(meta);
         return item;

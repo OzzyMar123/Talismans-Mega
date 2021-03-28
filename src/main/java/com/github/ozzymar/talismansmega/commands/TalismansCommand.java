@@ -27,41 +27,41 @@ public class TalismansCommand implements TabExecutor {
             Player player = (Player) sender;
             if (!player.hasPermission("talismans.base")) {
                 player.sendMessage(ColorFormatter.format(
-                    talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                 return true;
             }
             if (args.length == 0) {
                 talismansMega.getConfigs().getLangConfig().getYaml().getStringList("messages.cmd-usage")
-                    .forEach((s) -> player.sendMessage(ColorFormatter.format(s)));
+                        .forEach((s) -> player.sendMessage(ColorFormatter.format(s)));
             }
             if (args.length >= 1) {
                 if (args[0].equalsIgnoreCase("give")) {
                     if (!player.hasPermission("talismans.base.give")) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                         return true;
                     }
                     if (args.length < 3) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
                         return true;
                     }
                     if (args.length > 3) {
                         player.sendMessage(
-                            ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                                ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                         return true;
                     }
                     Player target = Bukkit.getPlayerExact(args[1]);
                     if (target == null) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
                         return true;
                     }
                     switch (args[2]) {
                         case "flash":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getFlashTalisman().getItem());
+                                        talismansMega.getTalismans().getFlashTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getFlashTalisman().getItem());
                             }
@@ -69,7 +69,7 @@ public class TalismansCommand implements TabExecutor {
                         case "health":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getHealthTalisman().getItem());
+                                        talismansMega.getTalismans().getHealthTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getHealthTalisman().getItem());
                             }
@@ -77,7 +77,7 @@ public class TalismansCommand implements TabExecutor {
                         case "warrior":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWarriorTalisman().getItem());
+                                        talismansMega.getTalismans().getWarriorTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWarriorTalisman().getItem());
                             }
@@ -85,7 +85,7 @@ public class TalismansCommand implements TabExecutor {
                         case "ironskin":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getIronskinTalisman().getItem());
+                                        talismansMega.getTalismans().getIronskinTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getIronskinTalisman().getItem());
                             }
@@ -93,7 +93,7 @@ public class TalismansCommand implements TabExecutor {
                         case "moltenskin":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getMoltenskinTalisman().getItem());
+                                        talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                             }
@@ -101,7 +101,7 @@ public class TalismansCommand implements TabExecutor {
                         case "quickhands":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getQuickhandsTalisman().getItem());
+                                        talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                             }
@@ -109,7 +109,7 @@ public class TalismansCommand implements TabExecutor {
                         case "waterbreath":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWaterbreathTalisman().getItem());
+                                        talismansMega.getTalismans().getWaterbreathTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWaterbreathTalisman().getItem());
                             }
@@ -117,7 +117,7 @@ public class TalismansCommand implements TabExecutor {
                         case "workbench":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWorkbenchTalisman().getItem());
+                                        talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                             }
@@ -125,29 +125,29 @@ public class TalismansCommand implements TabExecutor {
                         case "enderchest":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getEnderTalisman().getItem());
+                                        talismansMega.getTalismans().getEnderTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getEnderTalisman().getItem());
                             }
                         case "*":
                             talismansMega.getUtilities().getTUtils().talismans()
-                                .forEach(talisman -> target.getInventory().addItem(talisman));
+                                    .forEach(talisman -> target.getInventory().addItem(talisman));
                             break;
                         default:
                             player.sendMessage(ColorFormatter.format(
-                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.talisman-invalid")));
+                                    talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.talisman-invalid")));
                             break;
                     }
                 }
                 if (args[0].equalsIgnoreCase("shop")) {
                     if (!player.hasPermission("talismans.base.shop")) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                         return true;
                     }
                     if (args.length > 1) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                         return true;
                     }
                     player.openInventory(talismansMega.getMenus().getShopMenu().getInventory());
@@ -155,13 +155,13 @@ public class TalismansCommand implements TabExecutor {
                 if (args[0].equalsIgnoreCase("reload")) {
                     if (!player.hasPermission("talismans.base.reload")) {
                         player.sendMessage(
-                            ColorFormatter.format(
-                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
+                                ColorFormatter.format(
+                                        talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.no-permission")));
                         return true;
                     }
                     if (args.length > 1) {
                         player.sendMessage(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                         return true;
                     }
                     talismansMega.getUtilities().getTUtils().reload(player);
@@ -171,31 +171,31 @@ public class TalismansCommand implements TabExecutor {
         if (sender instanceof ConsoleCommandSender) {
             if (args.length == 0) {
                 talismansMega.getConfigs().getLangConfig().getYaml().getStringList("messages.cmd-usage")
-                    .forEach((s) -> System.out.println(ColorFormatter.format(s)));
+                        .forEach((s) -> System.out.println(ColorFormatter.format(s)));
             }
             if (args.length >= 1) {
                 if (args[0].equalsIgnoreCase("give")) {
                     if (args.length < 3) {
                         System.out.println(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.more-args-needed")));
                         return true;
                     }
                     if (args.length > 3) {
                         System.out.println(
-                            ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                                ColorFormatter.format(talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                         return true;
                     }
                     Player target = Bukkit.getPlayerExact(args[1]);
                     if (target == null) {
                         System.out.println(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.player-invalid")));
                         return true;
                     }
                     switch (args[2]) {
                         case "flash":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getFlashTalisman().getItem());
+                                        talismansMega.getTalismans().getFlashTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getFlashTalisman().getItem());
                             }
@@ -203,7 +203,7 @@ public class TalismansCommand implements TabExecutor {
                         case "health":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getHealthTalisman().getItem());
+                                        talismansMega.getTalismans().getHealthTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getHealthTalisman().getItem());
                             }
@@ -211,7 +211,7 @@ public class TalismansCommand implements TabExecutor {
                         case "warrior":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWarriorTalisman().getItem());
+                                        talismansMega.getTalismans().getWarriorTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWarriorTalisman().getItem());
                             }
@@ -219,7 +219,7 @@ public class TalismansCommand implements TabExecutor {
                         case "ironskin":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getIronskinTalisman().getItem());
+                                        talismansMega.getTalismans().getIronskinTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getIronskinTalisman().getItem());
                             }
@@ -227,7 +227,7 @@ public class TalismansCommand implements TabExecutor {
                         case "moltenskin":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getMoltenskinTalisman().getItem());
+                                        talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getMoltenskinTalisman().getItem());
                             }
@@ -235,7 +235,7 @@ public class TalismansCommand implements TabExecutor {
                         case "quickhands":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getQuickhandsTalisman().getItem());
+                                        talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getQuickhandsTalisman().getItem());
                             }
@@ -243,7 +243,7 @@ public class TalismansCommand implements TabExecutor {
                         case "waterbreath":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWaterbreathTalisman().getItem());
+                                        talismansMega.getTalismans().getWaterbreathTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWaterbreathTalisman().getItem());
                             }
@@ -251,7 +251,7 @@ public class TalismansCommand implements TabExecutor {
                         case "workbench":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getWorkbenchTalisman().getItem());
+                                        talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getWorkbenchTalisman().getItem());
                             }
@@ -259,24 +259,24 @@ public class TalismansCommand implements TabExecutor {
                         case "enderchest":
                             if (target.getInventory().firstEmpty() == -1) {
                                 target.getWorld().dropItemNaturally(target.getLocation(),
-                                    talismansMega.getTalismans().getEnderTalisman().getItem());
+                                        talismansMega.getTalismans().getEnderTalisman().getItem());
                             } else {
                                 target.getInventory().addItem(talismansMega.getTalismans().getEnderTalisman().getItem());
                             }
                         case "*":
                             talismansMega.getUtilities().getTUtils().talismans()
-                                .forEach(talisman -> target.getInventory().addItem(talisman));
+                                    .forEach(talisman -> target.getInventory().addItem(talisman));
                             break;
                         default:
                             System.out.println(ColorFormatter.format(
-                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.talisman-invalid")));
+                                    talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.talisman-invalid")));
                             break;
                     }
                 }
                 if (args[0].equalsIgnoreCase("reload")) {
                     if (args.length > 1) {
                         System.out.println(ColorFormatter.format(
-                            talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
+                                talismansMega.getConfigs().getLangConfig().getYaml().getString("messages.less-args-needed")));
                         return true;
                     }
                     talismansMega.getUtilities().getTUtils().reload();
@@ -305,9 +305,9 @@ public class TalismansCommand implements TabExecutor {
             if (args.length == 2) {
                 List<String> list = new ArrayList<>();
                 Bukkit.getOnlinePlayers()
-                    .stream()
-                    .map(player -> (Player) player)
-                    .forEach(player -> list.add(player.getName()));
+                        .stream()
+                        .map(player -> (Player) player)
+                        .forEach(player -> list.add(player.getName()));
                 List<String> result = new ArrayList<>();
                 for (String a : list) {
                     if (a.toLowerCase().startsWith(args[1].toLowerCase()))

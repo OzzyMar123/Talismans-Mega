@@ -19,7 +19,7 @@ public class QUICKHANDS_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(XPotion.FAST_DIGGING.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.FAST_DIGGING.parsePotionEffectType(), 35, 2)
         };
     }
 

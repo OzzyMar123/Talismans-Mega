@@ -19,7 +19,7 @@ public class FLASH_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-            makePotion(XPotion.SPEED.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.SPEED.parsePotionEffectType(), 35, 2)
         };
     }
 
