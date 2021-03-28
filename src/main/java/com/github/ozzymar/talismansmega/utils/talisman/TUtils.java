@@ -19,6 +19,35 @@ public class TUtils {
         this.talismansMega = talismansMega;
     }
 
+    public void reload() {
+        try {
+            talismansMega.getConfigs().getLangConfig().reload();
+            talismansMega.getConfigs().getMenusConfig().reload();
+
+            talismansMega.getConfigs().getFlashTalismanConfig().reload();
+            talismansMega.getConfigs().getHealthTalismanConfig().reload();
+            talismansMega.getConfigs().getWarriorTalismanConfig().reload();
+            talismansMega.getConfigs().getIronskinTalismanConfig().reload();
+            talismansMega.getConfigs().getMoltenskinTalismanConfig().reload();
+            talismansMega.getConfigs().getQuickhandsTalismanConfig().reload();
+            talismansMega.getConfigs().getWaterbreathTalismanConfig().reload();
+            talismansMega.getConfigs().getWorkbenchTalismanConfig().reload();
+            talismansMega.getConfigs().getEnderchestTalismanConfig().reload();
+
+            Bukkit.getOnlinePlayers().stream()
+                .map(p -> (Player) p)
+                .forEach(p ->
+                {
+                    for (ItemStack item : p.getInventory().getContents()) {
+                        if (item == null) return;
+                        update(item);
+                    }
+                });
+        } catch (Exception ex) {
+            talismansMega.getConfigs().load();
+        }
+    }
+
     public void reload(Player player) {
         try {
             talismansMega.getConfigs().getLangConfig().reload();
@@ -36,7 +65,8 @@ public class TUtils {
 
             Bukkit.getOnlinePlayers().stream()
                 .map(p -> (Player) p)
-                .forEach(p -> {
+                .forEach(p ->
+                {
                     for (ItemStack item : p.getInventory().getContents()) {
                         if (item == null) return;
                         update(item);

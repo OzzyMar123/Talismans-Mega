@@ -40,7 +40,9 @@ public class TalismansMega extends JavaPlugin {
         effects.load();
 
         if (!utilities.getServerEconomyManager().setupEconomy(this)) {
-            System.out.println(ColorFormatter.format("[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!"));
+            System.out.println(ColorFormatter.format(
+                "[TALISMANS-MEGA] You are missing vault and/or an economy plugin, please install then restart!")
+            );
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -78,5 +80,9 @@ public class TalismansMega extends JavaPlugin {
 
     public Menus getMenus() {
         return menus;
+    }
+
+    public Effects getEffects() {
+        return effects;
     }
 }

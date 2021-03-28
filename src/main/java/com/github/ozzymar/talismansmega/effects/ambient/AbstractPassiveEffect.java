@@ -33,7 +33,8 @@ public abstract class AbstractPassiveEffect extends BukkitRunnable {
             .map((player) -> (Player) player)
             .forEach(player ->
                 Arrays.stream(player.getInventory().getContents())
-                    .forEach(itemStack -> {
+                    .forEach(itemStack ->
+                    {
                         if (itemStack == null) return;
                         NBTItem nbti = new NBTItem(itemStack);
                         if (!nbti.hasKey(talismanNeeded().talismanType())) return;

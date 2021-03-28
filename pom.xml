@@ -6,7 +6,7 @@
 
   <groupId>com.github.ozzymar</groupId>
   <artifactId>TalismansMega</artifactId>
-  <version>1.3</version>
+  <version>1.4</version>
   <packaging>jar</packaging>
 
   <name>Talismans-Mega</name>
@@ -109,7 +109,7 @@
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
-      <artifactId>spigot-api</artifactId>
+      <artifactId>spigot</artifactId>
       <version>1.16.5-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
