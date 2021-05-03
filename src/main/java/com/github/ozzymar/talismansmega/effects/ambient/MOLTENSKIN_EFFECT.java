@@ -19,7 +19,7 @@ public class MOLTENSKIN_EFFECT extends AbstractPassiveEffect {
     @Override
     public PotionEffect[] effects() {
         return new PotionEffect[]{
-                makePotion(XPotion.FIRE_RESISTANCE.parsePotionEffectType(), 35, 2)
+                makePotion(XPotion.FIRE_RESISTANCE.parsePotionEffectType(), 2)
         };
     }
 

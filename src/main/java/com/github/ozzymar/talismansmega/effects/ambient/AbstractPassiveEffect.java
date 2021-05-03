@@ -46,7 +46,7 @@ public abstract class AbstractPassiveEffect extends BukkitRunnable {
                                 }));
     }
 
-    protected PotionEffect makePotion(PotionEffectType type, int duration, int amplifier) {
-        return new PotionEffect(type, duration, amplifier - 1, false, false);
+    protected PotionEffect makePotion(PotionEffectType type, int amplifier) {
+        return new PotionEffect(type, 35, amplifier - 1, false, false);
     }
 }
